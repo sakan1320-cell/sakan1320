@@ -1,0 +1,104 @@
+/* Calendar popup container */
+.hijri-calendar-popup {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  min-width: 270px;
+  pointer-events: auto !important;
+}
+
+.hijri-calendar-popup * {
+  pointer-events: auto !important;
+}
+
+/* Toggle bar */
+.hijri-calendar-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 8px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  background: #f8fafc;
+  direction: rtl;
+}
+
+.hijri-toggle-btn {
+  font-size: 14px;
+  font-weight: 600;
+  color: #94a3b8;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  transition: color 0.15s;
+}
+
+.hijri-toggle-btn:hover {
+  color: #475569;
+}
+
+.hijri-toggle-btn.active {
+  color: #1d3557;
+}
+
+/* Calendar body */
+.hijri-calendar-popup .rmdp-wrapper {
+  box-shadow: none !important;
+  border: none !important;
+  padding: 4px;
+}
+
+.hijri-calendar-popup .rmdp-header {
+  font-size: 13px;
+  padding: 4px 8px;
+}
+
+/* Day cells: taller to hold secondary date below the circle */
+.hijri-calendar-popup .rmdp-day {
+  width: 34px !important;
+  height: 46px !important;
+  overflow: visible !important;
+}
+
+/* Fix the selection circle to be round (not oval) */
+/* Force equal height=width so border-radius:50% stays a circle */
+.hijri-calendar-popup .rmdp-day span {
+  top: 3px !important;
+  left: 3px !important;
+  right: 3px !important;
+  bottom: auto !important;        /* Cancel default bottom:3px that stretches it */
+  height: 28px !important;       /* Equal to width (34-3-3=28) → stays a circle */
+  overflow: visible !important;
+}
+
+/* Week day header */
+.hijri-calendar-popup .rmdp-week-day {
+  width: 34px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1d3557;
+}
+
+/* SECONDARY DATE: the bracketed number below the circle */
+/* Override ALL library .rmdp-day span rules using data attribute */
+.hijri-calendar-popup .rmdp-day span [data-hijri-secondary],
+.hijri-calendar-popup [data-hijri-secondary] {
+  all: unset;
+  display: block !important;
+  position: absolute !important;
+  top: auto !important;
+  bottom: -12px !important;       /* 12px below the circle's bottom edge */
+  left: -3px !important;          /* Stretch slightly beyond circle */
+  right: -3px !important;
+  text-align: center !important;
+  font-size: 8px !important;
+  color: #94a3b8 !important;
+  pointer-events: none !important;
+  font-weight: 400 !important;
+  line-height: 1.2 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}

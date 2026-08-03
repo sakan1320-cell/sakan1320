@@ -1,0 +1,8 @@
+{
+  "name": "سكن المجتمع للبحث والتطوير",
+  "description": "شركة غير ربحية متخصصة في شؤون المرأة تقدم البرامج التنموية التي تساعد في تعزيز دورها الأسري والمجتمعي - منصة إدارية متكاملة للمشاريع والمشاركات",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
